@@ -1,13 +1,13 @@
 <nav>
 	<div class="nav-wrapper">
-		<a href="#" class="brand-logo">Spotify</a>
-		
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-      		<li class="active"><a href="#">Inicio</a></li>
-			<li><a href="#">Artistas</a></li>
-			<li><a href="#">Canciones</a></li>
-			<li><a href="#">Álbumes</a></li>
+		<a href="#" class="brand-logo"><i class="material-icons">cloud</i>Spotify</a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down"> 
+		  <li class="active"><a [routerLink]="['/']" >Inicio</a></li>
+		  <li><a [routerLink]="['/artists']">Artistas</a></li>
+		  <li><a [routerLink]="['/songs']">Canciones</a></li>
+		  <li><a [routerLink]="['/albums']">Álbumes</a></li>
 		</ul>
+		
 		<form>
 	        <div class="input-field">
 	          <input id="search" type="search" required>
