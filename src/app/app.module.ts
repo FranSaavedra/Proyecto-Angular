@@ -14,8 +14,12 @@ import { SongsComponent } from './songs/songs.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { DatosEstaticosService } from './datos-estaticos.service';
+import { AlbumsContainerComponent } from './albums-container/albums-container.component';
+
 const routes: Routes = [
     { path: '', component: IndexComponent },
+    { path: 'index', component: IndexComponent },
     { path: 'artists', component: ArtistsComponent },
     { path: 'songs', component: SongsComponent},
     { path: 'albums', component: AlbumsComponent},
@@ -33,7 +37,8 @@ export const routing = RouterModule.forRoot(routes);
     ArtistsComponent,
     SongsComponent,
     AlbumsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AlbumsContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,7 @@ export const routing = RouterModule.forRoot(routes);
     HttpModule,
     routing
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ DatosEstaticosService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
