@@ -6,9 +6,13 @@
 	background-color: white;
 }
 
-img {
+.img-rounded {
     margin: 10px;
     width: 100%;
+}
+
+img {
+    height: 355px;
 }
 
 h2 {
@@ -35,3 +39,8 @@ p {
     position:relative;
     
 }
+
+.card{
+    height: 500px;
+}
+

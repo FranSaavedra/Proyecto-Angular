@@ -61,7 +61,21 @@ export class NavbarComponent implements OnInit {
   }
 
   search(){
-    console.log("buscando");
+    switch (this.page) {
+      case "albums":
+        this.service.searchAlbum(this.content);
+        break;
+      case "artists":
+        // code...
+        break;
+      case "songs":
+        // code...
+        break;
+      
+      default:
+        // code...
+        break;
+    }
   }
 
 }

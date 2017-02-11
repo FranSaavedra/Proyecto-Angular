@@ -1,4 +1,4 @@
-<div class="container" *ngIf="defaultAlbum">
+<div class="container" *ngIf="defaultAlbum && defaultArtists">
 	<div class="row">
 		<div class="col-sm-7 col-sm-push-5 col-md-5 col-md-push-7">
 			<img class="img-rounded" [src] = "defaultAlbum.images[0].url" alt="Artistas">
@@ -11,15 +11,13 @@
 		</div>
 	</div>
 
-
-
 	<div class="row">
-		<div class="card col-sm-6 col-md-4" *ngFor="let track of defaultAlbum.tracks['items'];">
+		<div class="card col-sm-6 col-md-4" *ngFor="let track of defaultAlbum.tracks['items']; let i = index;">
 		    <div class="card-image waves-effect waves-block waves-light">
-		      <img class="activator" src="./assets/music.jpg">
+		      <img class="activator" [src]="defaultArtists[i].images[0].url">
 		    </div>
 		    <div class="card-content">
-		      <span class="card-title activator grey-text text-darken-4">{{track.name}}<i class="material-icons right">more_vert</i></span>
+		      <span class="card-title activator grey-text text-darken-4">{{track.name}} ({{track.artists[0].name}})<i class="material-icons right">more_vert</i></span>
 		      <p><a [href]="track.preview_url">Escuchar canción</a></p>
 		    </div>
 		    <div class="card-reveal">
@@ -31,21 +29,38 @@
 	    </div>
 	</div>
 
+</div>
 
+<div class="container" *ngIf="album && artists">
+	<div class="row">
+		<div class="col-sm-7 col-sm-push-5 col-md-5 col-md-push-7">
+			<img class="img-rounded" [src] = "artists['images'][0].url" alt="Artistas">
+		</div>
+		<div class="col-sm-5 col-sm-pull-7 col-md-6 col-md-pull-5">
+			<h2>{{album.label}}</h2>
+			<p>{{album.name}}</p>
+			<p>{{album.release_date}}</p>
+			<a class="waves-effect waves-light btn" [href]="album.href">Abrir en Spotify</a>
+		</div>
+	</div>
 
-	<!--<div class="card" *ngFor="let track of defaultAlbum.tracks['items'];">
-	    <div class="card-image waves-effect waves-block waves-light">
-	      <img class="activator" src="images/office.jpg">
+	<div class="row">
+		<div class="card col-sm-6 col-md-4" *ngFor="let track of album['items'];">
+			<div class="card-image waves-effect waves-block waves-light">
+		      <img class="activator" [src]="track.images[0].url">
+		    </div>
+		    <div class="card-content">
+		      <span class="card-title activator grey-text text-darken-4">{{track.name}} ({{track.artists[0].name}})<i class="material-icons right">more_vert</i></span>
+		      <p><a [href]="track.preview_url">Escuchar canción</a></p>
+		    </div>
+		    <div class="card-reveal">
+		      <span class="card-title grey-text text-darken-4">{{track.name}}<i class="material-icons right">close</i></span>
+		      <p><a [href]="track.external_urls.spotify">Abrir canción en Spotify</a></p>
+		      <span class="card-title grey-text text-darken-4">{{track.artists[0].name}}</span>
+		      <p><a [href]="track.artists[0].external_urls.spotify">Abrir cantante en Spotify</a></p>
+		    </div>
+		    
 	    </div>
-	    <div class="card-content">
-	      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-	      <p><a href="#">This is a link</a></p>
-	    </div>
-	    <div class="card-reveal">
-	      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-	      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-	    </div>
-  </div>-->
-
+	</div>
 
 </div>
