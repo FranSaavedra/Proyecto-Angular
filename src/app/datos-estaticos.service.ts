@@ -52,8 +52,13 @@ export class DatosEstaticosService {
     this.ajax.get('https://api.spotify.com/v1/search?type=album&q=' + album)
     .map(response => response.json().albums)
     .subscribe( data => {
-        this.album.next(data);
-        this.getArtists(data.items[0].artists[0].id);
+        if(data['items'].length == 0) {
+          this.album.next(null);
+        }else{
+          this.album.next(data);
+          this.getArtists(data.items[0].artists[0].id);
+        }
+        
       });
   }
 

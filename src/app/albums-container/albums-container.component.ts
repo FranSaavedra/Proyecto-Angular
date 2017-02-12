@@ -37,7 +37,7 @@ export class AlbumsContainerComponent implements OnInit {
         this.album = album;
         this.defaultAlbum = null;
         console.log("album");
-        console.log(this.album['items']);
+        console.log(this.album);
       }
     );
     this.subscriptionArtists = this.service.newArtists$.subscribe(
