@@ -1,0 +1,46 @@
+.row div {
+	text-align: center;
+}
+
+.row  {
+	background-color: white;
+}
+
+.img-rounded {
+    margin: 10px;
+    width: 100%;
+}
+
+img {
+    height: 355px;
+}
+
+h2 {
+	color: #8E24AA;
+}
+
+p {
+	color: #212121;
+}
+
+.row:first-of-type{
+	margin-top: 30px;
+}
+
+.post-content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    opacity: 0.5;
+    top:0;
+    left:0;
+    position: absolute;
+}
+
+.thumbnail{
+    position:relative;
+    
+}
+
+.card{
+    height: 500px;
+}
+
