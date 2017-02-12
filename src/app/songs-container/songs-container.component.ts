@@ -9,35 +9,28 @@ import { Subscription }   from 'rxjs/Subscription';
 })
 export class SongsContainerComponent implements OnInit {
 
-  subscriptionDefaultAlbum: Subscription;
-  subscriptionDefaultArtists: Subscription;
+  subscriptionDefaultTrack: Subscription;
+  subscriptionTrack: Subscription;
   subscriptionArtists: Subscription;
-  subscriptionAlbum: Subscription;
-  defaultAlbum: any;
-  defaultArtists: any;
-  album: any;
+  defaultTrack: any;
+  track: any;
   artists: any;
   constructor(private service: DatosEstaticosService) { 
   }
 
   ngOnInit() {
     this.service.changePage("songs");
-    this.subscriptionDefaultAlbum = this.service.newDefaultAlbum$.subscribe(
-      defaultAlbum =>{
-        this.defaultAlbum = defaultAlbum;
+    this.subscriptionDefaultTrack = this.service.newDefaultTrack$.subscribe(
+      defaultTrack =>{
+        this.defaultTrack = defaultTrack;
       }
     );
-    this.subscriptionDefaultArtists = this.service.newDefaultArtists$.subscribe(
-      defaultArtists =>{
-        this.defaultArtists = defaultArtists;
-      }
-    );
-    this.subscriptionAlbum = this.service.newAlbum$.subscribe(
-      album =>{
-        this.album = album;
-        this.defaultAlbum = null;
-        console.log("album");
-        console.log(this.album);
+    this.subscriptionTrack = this.service.newTrack$.subscribe(
+      track =>{
+        this.track = track;
+        this.defaultTrack = null;
+        console.log("songs");
+        console.log(this.track);
       }
     );
     this.subscriptionArtists = this.service.newArtists$.subscribe(

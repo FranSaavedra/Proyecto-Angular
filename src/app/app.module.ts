@@ -22,7 +22,6 @@ import { SongsContainerComponent } from './songs-container/songs-container.compo
 const routes: Routes = [
     { path: '', component: IndexComponent },
     { path: 'index', component: IndexComponent },
-    { path: 'artists', component: ArtistsComponent },
     { path: 'songs', component: SongsComponent},
     { path: 'albums', component: AlbumsComponent},
     { path: '**', component: PageNotFoundComponent }

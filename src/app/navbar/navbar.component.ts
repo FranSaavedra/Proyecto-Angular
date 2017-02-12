@@ -66,10 +66,10 @@ export class NavbarComponent implements OnInit {
         this.service.searchAlbum(this.content);
         break;
       case "artists":
-        // code...
+        //this.service.searchAlbum(this.content);
         break;
       case "songs":
-        // code...
+         this.service.searchSong(this.content);
         break;
       
       default:
